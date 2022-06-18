@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from core import views #importando a views
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('agenda/', views.lista_eventos), #criando a pagina de agendamento
+    # path('', views.index) #para quando for usar o default para agenda
+    path('', RedirectView.as_view(url='/agenda/'))
 ]
