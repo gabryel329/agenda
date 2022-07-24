@@ -22,7 +22,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('agenda/', views.lista_eventos), #criando a pagina de agendamento
     # path('', views.index) #para quando for usar o default para agenda
-    path('', RedirectView.as_view(url='/agenda/')),
+    path('agenda/evento/', views.evento),
+    path('agenda/evento/submit', views.submit_evento),
+    path('/', RedirectView.as_view(url='/agenda/')),
     path('login/', views.login_user),#tela de login
     path('login/submit', views.submit_login),
     path('logout/', views.logout_user),
