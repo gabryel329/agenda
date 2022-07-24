@@ -19,3 +19,6 @@ class Evento(models.Model):
     def get_data_evento(self): #chamando os eventos e a data de craicao para pagina de agendamento
         return self.data_evento.strftime('%d/%m/%Y %H:%Mh')
 
+    def get_data_input_evento(self):
+        return self.data_evento.strftime('%Y-%m-%dT%H:%M')
+
